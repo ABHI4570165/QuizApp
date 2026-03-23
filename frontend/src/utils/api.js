@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "/api",
-  timeout: 15000,
+ baseURL: API_BASE_URL,
+  timeout: 30000, // Increased to 30s to handle 2MB+ quiz submissions safely
   headers: { "Content-Type": "application/json" },
 });
 
