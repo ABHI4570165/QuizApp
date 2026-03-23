@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+.er-page { width: 100vw; min-height: 100vh; display: flex; flex-direction: column; background-color: #020617; color: #F8FAFC; overflow-x: hidden; }
+
+/* ── Navbar ── */
+.er-navbar { 
+  width: 100%; padding: 14px 20px; 
+  border-bottom: 1px solid rgba(51,65,85,0.5); 
+  background: rgba(2,6,23,0.9); 
+  display: flex; align-items: center; justify-content: space-between; 
+  position: sticky; top: 0; z-index: 20; 
+  backdrop-filter: blur(10px); box-sizing: border-box; 
+}
+.er-navbar-brand { display: flex; align-items: center; gap: 10px; }
+.er-navbar-logo { 
+  width: 34px; height: 34px; border-radius: 8px; 
+  background: white; display: flex; align-items: center; justify-content: center; 
+  overflow: hidden; padding: 2px; flex-shrink: 0; 
+}
+.er-navbar-logo img { width: 100%; height: 100%; object-fit: contain; }
+.er-navbar-name { font-size: 0.95rem; font-weight: 800; color: #F8FAFC; line-height: 1.2; }
+.er-navbar-sub  { font-size: 0.65rem; color: #6366f1; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+/* ── Hero ── */
+.er-hero { padding: 32px 20px 16px; text-align: center; }
+.er-hero-title { font-size: 1.75rem; font-weight: 900; color: #F8FAFC; letter-spacing: -0.5px; line-height: 1.2; }
+.er-hero-title span { color: #60a5fa; }
+.er-hero-sub { font-size: 0.9rem; color: #94a3b8; margin-top: 8px; padding: 0 10px; }
+
+/* ── Main Container ── */
+.er-main { width: 100%; max-width: 900px; margin: 0 auto; padding: 10px 16px 40px; box-sizing: border-box; }
+.er-card { background: rgba(15,23,42,0.8); border: 1px solid rgba(51,65,85,0.5); border-radius: 16px; padding: 24px 20px; box-sizing: border-box; }
+
+/* ── Form Logic ── */
+.er-grid { display: grid; gap: 16px; width: 100%; }
+.er-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.er-field { display: flex; flex-direction: column; gap: 6px; }
+.er-label { font-size: 0.8rem; font-weight: 600; color: #94a3b8; }
+.er-required { color: #ef4444; margin-left: 3px; }
+.er-input {
+  width: 100%; padding: 12px 14px; font-size: 1rem; 
+  color: #F8FAFC; background: rgba(2,6,23,0.6);
+  border: 1px solid rgba(51,65,85,0.8); border-radius: 8px;
+  outline: none; transition: all 0.2s;
+  font-family: 'Inter', sans-serif; box-sizing: border-box;
+}
+.er-input--textarea { min-height: 100px; resize: none; }
+.er-section-label { font-size: 0.85rem; font-weight: 700; color: #60a5fa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+
+/* ── Buttons ── */
+.er-submit-wrap { margin-top: 32px; display: flex; justify-content: center; }
+.er-btn--primary { 
+  background: linear-gradient(135deg, #2563eb, #0ea5e9); color: white; 
+  border: none; padding: 14px 40px; border-radius: 12px; font-weight: 800; cursor: pointer;
+}
+.er-start-quiz-btn { 
+  margin-top: 20px; background: linear-gradient(135deg, #2563eb, #0ea5e9); 
+  color: white; border: none; padding: 16px; border-radius: 12px; font-weight: 800; width: 100%; cursor: pointer;
+}
+
+/* ── Success States ── */
+.er-success-card { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.er-success-burst { width: 64px; height: 64px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.er-success-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; width: 100%; margin: 24px 0; }
+.er-success-item { background: rgba(30,41,59,0.5); padding: 12px; border-radius: 8px; text-align: left; border: 1px solid rgba(51,65,85,0.3); }
+.er-success-item span { font-size: 0.65rem; color: #94a3b8; font-weight: 700; text-transform: uppercase; display: block; }
+.er-success-item strong { color: #f8fafc; font-size: 0.9rem; }
+
+/* 📱 Mobile Overrides */
+@media (max-width: 640px) {
+  .er-grid--2, .er-success-grid { grid-template-columns: 1fr; }
+  .er-hero-title { font-size: 1.5rem; }
+  .er-btn--primary { width: 100%; }
+}

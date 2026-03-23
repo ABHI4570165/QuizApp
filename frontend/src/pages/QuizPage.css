@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ── Base ── */
+.qp-root { width: 100vw; min-height: 100vh; display: flex; flex-direction: column; background: #020617; color: #F8FAFC; font-family: 'Inter', sans-serif; }
+
+/* ── Loading / Error screens ── */
+.qp-center { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 40px; text-align: center; }
+.qp-spinner { width: 44px; height: 44px; border: 3px solid rgba(99,102,241,0.2); border-top-color: #6366f1; border-radius: 50%; animation: qp-spin .7s linear infinite; }
+@keyframes qp-spin { to { transform: rotate(360deg); } }
+.qp-center h2 { font-size: 1.5rem; font-weight: 800; color: #F8FAFC; }
+.qp-center p  { color: #94a3b8; font-size: 0.95rem; }
+.qp-center button { margin-top: 8px; background: linear-gradient(135deg,#2563eb,#0ea5e9); color: white; border: none; padding: 12px 28px; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer; font-family: 'Inter', sans-serif; }
+
+/* ── Quiz Header ── */
+.qp-header { width: 100%; padding: 14px 24px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: center; background: rgba(255,255,255,0.97); position: sticky; top: 0; z-index: 10; backdrop-filter: blur(10px); }
+.qp-header-inner { width: 100%; max-width: 960px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.qp-brand { display: flex; align-items: center; gap: 10px; }
+.qp-brand-logo { width: 34px; height: 34px; border-radius: 6px; background: #0f172a; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.qp-brand-logo img { width: 30px; height: 30px; object-fit: contain; }
+.qp-welcome { font-size: 0.9rem; color: #334155; font-weight: 600; }
+.qp-welcome strong { color: #0f172a; }
+.qp-meta { display: flex; align-items: center; gap: 10px; }
+.qp-q-badge { background: #eff6ff; color: #1d4ed8; font-weight: 700; padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; }
+.qp-timer { background: #0f172a; color: white; font-weight: 800; padding: 6px 14px; border-radius: 6px; display: flex; align-items: center; gap: 6px; font-family: monospace; font-size: 1rem; transition: background 0.3s; }
+.qp-timer--danger { background: #ef4444; animation: qp-pulse 1s infinite; }
+@keyframes qp-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }
+
+/* ── Progress Bar ── */
+.qp-progress-wrap { width: 100%; background: #e2e8f0; height: 4px; }
+.qp-progress-bar  { height: 4px; background: linear-gradient(90deg, #6366f1, #0ea5e9); transition: width 0.3s ease; }
+
+/* ── Content ── */
+.qp-content { width: 100%; max-width: 960px; margin: 0 auto; flex: 1; padding: 36px 24px; display: flex; flex-direction: column; background: #f8fafc; }
+.qp-q-num  { font-size: 0.75rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+.qp-q-text { font-size: 1.45rem; font-weight: 800; color: #0f172a; line-height: 1.45; margin-bottom: 28px; }
+.qp-opts   { display: flex; flex-direction: column; gap: 12px; }
+.qp-opt    { padding: 16px 20px; border: 2px solid #e2e8f0; border-radius: 12px; cursor: pointer; display: flex; align-items: center; gap: 14px; background: white; transition: all 0.18s; user-select: none; }
+.qp-opt:hover { border-color: #c7d2fe; background: #eef2ff; }
+.qp-opt--selected { border-color: #6366f1; background: #eef2ff; }
+.qp-opt-radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #cbd5e1; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.18s; }
+.qp-opt--selected .qp-opt-radio { border-color: #6366f1; background: #6366f1; }
+.qp-opt-radio-dot { width: 8px; height: 8px; border-radius: 50%; background: white; }
+.qp-opt-text { font-size: 1rem; font-weight: 600; color: #334155; line-height: 1.4; }
+.qp-opt--selected .qp-opt-text { color: #3730a3; }
+
+/* ── Question Nav dots ── */
+.qp-nav-dots { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 28px; }
+.qp-dot { width: 28px; height: 28px; border-radius: 6px; border: none; font-size: 0.7rem; font-weight: 700; cursor: pointer; transition: all 0.15s; font-family: 'Inter', sans-serif; }
+.qp-dot--unanswered { background: #f1f5f9; color: #94a3b8; }
+.qp-dot--answered   { background: #dbeafe; color: #1d4ed8; }
+.qp-dot--current    { background: #6366f1; color: white; }
+
+/* ── Footer ── */
+.qp-footer { width: 100%; background: white; border-top: 1px solid #e2e8f0; display: flex; justify-content: center; padding: 16px 24px; position: sticky; bottom: 0; z-index: 10; }
+.qp-footer-inner { width: 100%; max-width: 960px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.qp-answered-count { font-size: 0.8rem; color: #64748b; font-weight: 600; }
+.qp-footer-btns { display: flex; gap: 10px; }
+.qp-btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 22px; font-size: 0.9rem; font-weight: 700; border-radius: 8px; border: none; cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.15s; }
+.qp-btn--outline { background: white; border: 2px solid #e2e8f0; color: #475569; }
+.qp-btn--outline:hover:not(:disabled) { border-color: #cbd5e1; }
+.qp-btn--outline:disabled { opacity: 0.4; cursor: not-allowed; }
+.qp-btn--primary { background: #0f172a; color: white; }
+.qp-btn--primary:hover { background: #1e293b; }
+.qp-btn--submit  { background: linear-gradient(135deg,#6366f1,#4f46e5); color: white; }
+.qp-btn--submit:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(99,102,241,0.3); }
+
+/* ── Confirm Modal ── */
+.qp-modal-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.6); display: flex; align-items: center; justify-content: center; z-index: 100; padding: 24px; animation: qp-fade .15s ease; }
+@keyframes qp-fade { from { opacity: 0; } to { opacity: 1; } }
+.qp-modal { background: white; border-radius: 16px; padding: 28px; width: 100%; max-width: 420px; text-align: center; animation: qp-slide .2s ease; }
+@keyframes qp-slide { from { transform: translateY(20px); opacity: 0; } to { transform: none; opacity: 1; } }
+.qp-modal h3 { font-size: 1.3rem; font-weight: 800; color: #0f172a; margin-bottom: 8px; }
+.qp-modal p  { font-size: 0.9rem; color: #64748b; margin-bottom: 20px; line-height: 1.6; }
+.qp-modal-btns { display: flex; gap: 10px; justify-content: center; }
+
+/* ── Result Screen ── */
+.qp-result { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 24px; text-align: center; min-height: 100vh; }
+.qp-result-icon { width: 90px; height: 90px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+.qp-result-icon--pass { background: linear-gradient(135deg,#10b981,#059669); box-shadow: 0 0 0 16px rgba(16,185,129,0.1); }
+.qp-result-icon--fail { background: linear-gradient(135deg,#f59e0b,#d97706); box-shadow: 0 0 0 16px rgba(245,158,11,0.1); }
+.qp-result-title { font-size: 2rem; font-weight: 900; color: #0f172a; margin-bottom: 6px; }
+.qp-result-sub   { font-size: 1rem; color: #64748b; margin-bottom: 24px; }
+.qp-score-card   { background: linear-gradient(135deg,#f8fafc,#f1f5f9); border: 2px solid #e2e8f0; border-radius: 16px; padding: 24px 48px; margin-bottom: 24px; }
+.qp-score-num    { font-size: 4.5rem; font-weight: 900; line-height: 1; }
+.qp-score-num--pass { color: #059669; }
+.qp-score-num--fail { color: #d97706; }
+.qp-score-label  { font-size: 0.85rem; color: #94a3b8; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+.qp-cert-badge   { background: linear-gradient(135deg,#eff6ff,#dbeafe); border: 1px solid #93c5fd; border-radius: 10px; padding: 12px 24px; margin-bottom: 20px; font-size: 0.9rem; font-weight: 700; color: #1e40af; }
+.qp-result-btns  { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.qp-dl-btn { background: linear-gradient(135deg,#6366f1,#4f46e5); color: white; border: none; padding: 14px 36px; border-radius: 10px; font-size: 1rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+.qp-dl-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(99,102,241,0.3); }
+.qp-dl-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.qp-email-note   { font-size: 0.8rem; color: #10b981; font-weight: 600; margin-top: 4px; }
+.qp-email-note--pending { color: #f59e0b; }
+
+/* ── Certificate (hidden, rendered off-screen for capture) ── */
+.qp-cert-wrapper { width: 1122px; height: 793px; position: fixed; top: -9999px; left: -9999px; background: #fff; font-family: 'Playfair Display', serif; }
+.qp-cert-border  { width: 100%; height: 100%; border: 20px solid #0f172a; padding: 12px; box-sizing: border-box; }
+.qp-cert-inner   { width: 100%; height: 100%; border: 5px solid #d4af37; padding: 48px 60px; box-sizing: border-box; position: relative; text-align: center; background: linear-gradient(135deg,#ffffff 40%,#f8fafc 100%); }
+.qp-cert-header  { display: flex; align-items: center; justify-content: center; gap: 18px; margin-bottom: 12px; }
+.qp-cert-logo    { height: 80px; width: auto; object-fit: contain; }
+.qp-cert-academy { font-size: 34px; font-weight: 900; color: #0f172a; text-transform: uppercase; letter-spacing: 6px; font-family: 'Inter', sans-serif; }
+.qp-cert-title   { font-size: 80px; font-weight: 900; letter-spacing: 10px; color: #d4af37; margin: 8px 0 0; }
+.qp-cert-sub     { font-size: 18px; color: #64748b; text-transform: uppercase; letter-spacing: 12px; margin-bottom: 30px; font-family: 'Inter', sans-serif; }
+.qp-cert-pres    { font-size: 22px; color: #475569; font-style: italic; margin-bottom: 8px; }
+.qp-cert-name    { font-size: 62px; font-weight: 700; color: #0f172a; border-bottom: 3px solid #d4af37; display: inline-block; padding-bottom: 4px; white-space: nowrap; }
+.qp-cert-desc    { font-size: 20px; color: #334155; max-width: 850px; margin: 28px auto 0; line-height: 1.7; font-family: 'Inter', sans-serif; }
+.qp-cert-footer  { position: absolute; bottom: 55px; right: 65px; left: 65px; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; }
+.qp-cert-sig     { text-align: center; }
+.qp-cert-sig-val { font-size: 22px; font-weight: 800; color: #0f172a; margin-bottom: 6px; }
+.qp-cert-sig-line{ border-top: 2px solid #cbd5e1; margin-bottom: 6px; }
+.qp-cert-sig-lbl { font-size: 13px; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+
+@media (max-width: 640px) {
+  .qp-header-inner { flex-direction: column; }
+  .qp-meta { width: 100%; justify-content: space-between; }
+  .qp-q-text { font-size: 1.2rem; }
+  .qp-footer-inner { flex-direction: column; align-items: stretch; }
+  .qp-footer-btns  { justify-content: stretch; }
+  .qp-btn { flex: 1; justify-content: center; }
+  .qp-result-title { font-size: 1.6rem; }
+  .qp-score-num    { font-size: 3.5rem; }
+  .qp-nav-dots     { gap: 4px; }
+  .qp-dot          { width: 24px; height: 24px; font-size: 0.65rem; }
+}
