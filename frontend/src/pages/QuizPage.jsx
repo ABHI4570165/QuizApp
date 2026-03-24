@@ -212,9 +212,9 @@ export default function QuizPage() {
                 {emailSent ? "✅ Certificate emailed successfully!" : "⚠️ Sending email... please wait"}
               </p>
             )} */}
-            <button onClick={() => navigate("/")} className="qp-btn qp-btn--outline" style={{ marginTop: 8 }}>
+            {/* <button onClick={() => navigate("/")} className="qp-btn qp-btn--outline" style={{ marginTop: 8 }}>
               Back to Home
-            </button>
+            </button> */}
           </div>
         </div>
 
