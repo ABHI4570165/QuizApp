@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Maintenance</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000; /* Vercel-style dark mode */
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.05rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #888;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: #111;
+            border: 1px solid #333;
+            font-size: 0.85rem;
+            color: #0070f3; /* Vercel Blue */
+        }
+
+        /* Subtle pulse animation */
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #0070f3;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">🛠️</div>
+        <h1>Project Paused</h1>
+        <p>We're currently performing some scheduled maintenance. This site will be back online shortly.</p>
+        
+        <div class="status-badge">
+            <span class="dot"></span>
+            System Status: Updates in progress
+        </div>
+    </div>
+</body>
+</html>
