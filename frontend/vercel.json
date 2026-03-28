@@ -1,5 +1,9 @@
 {
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/maintanance.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/maintenance.html"
+    }
   ]
 }
