@@ -58,7 +58,7 @@ cp .env.example .env
 
 Fill in your values:
 ```env
-PORT=5000
+PORT=5001
 MONGO_URI=mongodb+srv://<user>:<pass>@cluster.mongodb.net/mha_quiz
 CLIENT_URL=http://localhost:5173
 ADMIN_PASSWORD=your_secure_admin_password
